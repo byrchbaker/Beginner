@@ -16,14 +16,12 @@ root.resizable(width=False, height=False)
 # Functions
 def encode():
     user_value = entry_text.get()
-    a = f'{user_value}'
-    encoded = base64.b64encode(bytes(f'{a}', 'utf-8'))
+    encoded = base64.b64encode(bytes(f'{user_value}', 'utf-8'))
     answer_text.set(encoded)
     
 def decode():
     user_value = entry_text.get()
-    a = f'{user_value}'
-    decoded = base64.b64decode(a).decode("utf-8")
+    decoded = base64.b64decode(user_value).decode("utf-8")
     answer_text.set(decoded)
 
 # String Variables
